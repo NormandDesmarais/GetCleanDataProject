@@ -98,7 +98,7 @@ Here are the names of variables used in the summary data set. The original varia
 
 ###Activity
 * **Original name**: The only variable of the files *y_test.txt* and *y_train.txt*. Appears as an activity ID, which relationship to the activity name is provided by the file *activity_labels.txt*.
-* **Meaning**: The name of the activity being performed by the subject when the set of measurements where being recorded.
+* **Meaning**: The name of the activity being performed by the subject when the set of measurements where being recorded. Possible values are: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING.
 
 ###TimeBodyAccelerationMeanValue_Xaxis (Yaxis, Zaxis)
 * **Original name**: *tBodyAcc-mean()-X* (*Y*, *Z*)
