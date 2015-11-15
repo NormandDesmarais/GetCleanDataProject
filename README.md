@@ -26,6 +26,7 @@ Mag          | Magnitude
 -std()       | StandardDeviation
 -mean()      | MeanValue
 -X, -Y, -Z   | _Xaxis, _Yaxis, _Zaxis
+BodyBody     | Body (removing double occurence from original variable name)
 
 + 5) Finally, using this new table, a summary table containing the average value of each measurement per activity for each subject is generated. It is written in a text file named  *measurements_summary.txt*. The R code used to create this table, *run_analysis()*, also returns the summary table after completion.
 

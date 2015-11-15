@@ -22,7 +22,7 @@ Mag          | Magnitude
 -std()       | StandardDeviation
 -mean()      | MeanValue
 -X, -Y, -Z   | _Xaxis, _Yaxis, _Zaxis
-BodyBody     | Body (double occurence of Body by mistake)
+BodyBody     | Body (removing double occurence from original varibale name)
 
 + 5) Finally, using this new table, a summary table containing the average value of each measurement per activity for each subject is generated. It is written in a text file named  *measurements_summary.txt*. The R code used to create this table, *run_analysis()*, also returns the summary table after completion.
 
@@ -66,7 +66,7 @@ The set of variables that were estimated from these signals are:
 * mean(): Mean value
 * std(): Standard deviation
 
-(**Note:** Only the value of interest for our summary are listed here.)
+(**Note:** Only the variables of interest for our summary are listed here.)
 
 
 ##Code Book
