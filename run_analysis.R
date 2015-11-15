@@ -44,6 +44,7 @@ fexists <- function(fname, fdesc) {
 #                                 -X         --> _Xaxis
 #                                 -Y         --> _Yaxis
 #                                 -Z         --> _Zaxis
+#                                 BodyBody   --> Body (mistake in original)
 #       5) Finally, using this new table, it creates a summary table 
 #          containing the average of each measurement per subject and
 #          activity. Henceforth, each subject has 6 rows, one for
@@ -151,6 +152,7 @@ run_analysis <- function() {
         mlabels <- sub("-X","_Xaxis", mlabels)
         mlabels <- sub("-Y","_Yaxis", mlabels)
         mlabels <- sub("-Z","_Zaxis", mlabels)
+        mlabels <- sub("BodyBody","Body", mlabels)
         names(measurements) <- mlabels
         
         # We can now bind subjects, activities and measurements into one table
