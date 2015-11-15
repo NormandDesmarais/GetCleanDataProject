@@ -1,5 +1,5 @@
 # GetCleanDataProject
-Getting and Cleaning Data Course Project
+Getting and Cleaning Data Course's Project
 
 ##Description
 This repository contains the code for Getting and Cleaning Data course's project.
