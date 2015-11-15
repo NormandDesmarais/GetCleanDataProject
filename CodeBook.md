@@ -90,7 +90,7 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 The complete list of variables of each feature vector is available in 'features.txt'
 
 ##Code Book
-Here is the list of variables names found int the *measurements_summary.txt* file, with their original counterpart and meaning.
+Here are the names of variables used in the summary data set. The original variable names are provided as a reference.
 
 ###Subject_ID
 * **Original name**: The only variable of the files *subject_test.txt* and *subject_train.txt*.
