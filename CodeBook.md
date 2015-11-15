@@ -4,8 +4,8 @@ This is a summary of the *standard deviation* and *mean value* measurement varia
 
 The summary presented here shows, for the selected measurements, the average value of all measurements per activity for each subject. Hence each subject (represented by his **SubjectID**) has 6 rows, one for each **Activity**.
 
-##Data Cleaning Description
-The original data set his obtained from  [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip), and the following operations are being performed to obtain the summary:
+##Data Cleaning
+The original data set was obtained from  [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip), and the following operations were performed to obtain the summary:
 
 + 1) The test and training data sets are merged into one data set.
 + 2) Only the Standard Deviation (**-std()**) and Mean Value (**-mean()**) measurement variables are kept (other variables are discarded from the analysis).
