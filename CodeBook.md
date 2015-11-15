@@ -1,4 +1,4 @@
-#Human Activity Recognition Using Smartphones Data Set Summary
+#Human Activity Recognition Using Smartphones' Summary Data Set
 ## Description
 This is a summary of the *standard deviation* and *mean value* measurement variables from the Human Activity Recognition Using Smartphones Data Set from UCI Machine Learning Repository. More details on the original data set are available  [here](https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
 
@@ -7,10 +7,10 @@ The summary presented here shows, for the selected measurements, the average val
 ##Data Cleaning Description
 The original data set his obtained from  [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip), and the following operations are being performed to obtain the summary:
 
-1. The test and training data sets are merged into one data set.
-2. Only the Standard Deviation (**-std()**) and Mean Value (**-mean()**) measurement variables are kept (other variables are discarded from the analysis).
-3. Activities ID are replaced with their human readable names (as provided by the file *activity_labels.txt*).
-4. The feature's names from the file *features.txt* are used to name the selected measurement variable's, but abbreviations are expanded into their human readable version. (For example, the variable name **tBodyAcc-mean()-X** from the original data set is replaced by **TimeBodyAccelerationMeanValue_Xaxis** in the summary data set.)
++ 1) The test and training data sets are merged into one data set.
++ 2) Only the Standard Deviation (**-std()**) and Mean Value (**-mean()**) measurement variables are kept (other variables are discarded from the analysis).
++ 3) Activities ID are replaced with their human readable names (as provided by the file *activity_labels.txt*).
++ 4) The feature's names from the file *features.txt* are used to name the selected measurement variable's, but abbreviations are expanded into their human readable version. (For example, the variable name **tBodyAcc-mean()-X** from the original data set is replaced by **TimeBodyAccelerationMeanValue_Xaxis** in the summary data set.)
 
 Abbreviaton  | Is Replaced by
 ------------ | -----------------
@@ -23,7 +23,7 @@ Mag          | Magnitude
 -mean()      | MeanValue
 -X, -Y, -Z   | _Xaxis, _Yaxis, _Zaxis
 
-5. Finally, using this new table, a summary table containing the average value of each measurement per activity for each subject is generated. It is written in a text file named  *measurements_summary.txt*. The R code used to create this table, *run_analysis()*, also returns the summary table after completion.
++ 5) Finally, using this new table, a summary table containing the average value of each measurement per activity for each subject is generated. It is written in a text file named  *measurements_summary.txt*. The R code used to create this table, *run_analysis()*, also returns the summary table after completion.
 
 ##Original data set information
 ###Experiment
