@@ -8,8 +8,15 @@ This repository contains the R script and the code book for Getting and Cleaning
 + **README.md**: This file.
 + **run_analysis.R**: The R script that performs the analysis on the `Human Activity Recognition Using Smartphones`' original data set to produce a summary of the average measure per activity for each subject and for a set of selected measurement variables from the original data set (read *CodeBook.md* for more details).
 
-##Processing 
-The original data set was obtained from [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip), and the following operations were performed to obtain a summary per activity for each subject:
+##run_analysis() expectations
+The R script run_analysis makes the following assumptions:
++ the data have been obtained from [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
++ the zip file has been decompressed and nothing has been modified within the decompressed files and directories
++ the data set main directory after decompression ("UCI HAR Dataset") resiedes in the current working directory
++ the library `dplyr` has been installed
+
+##run_analysis() processing 
+The following operations are performed by run_analysis() to obtain a summary of some selected measurements per activity for each subject:
 
 + 1) The test and training data sets are merged into one data set.
 + 2) Only the Standard Deviation (**-std()**) and Mean Value (**-mean()**) measurement variables are kept (other variables are discarded from the analysis).
