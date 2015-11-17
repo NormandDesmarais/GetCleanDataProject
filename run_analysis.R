@@ -63,7 +63,7 @@ run_analysis <- function() {
         # 1) Merges the training and the test sets to create one data set.
         #
         #    Note: for the sake of simplicity, we'll keep measurements,
-        #          activities and subjects in three tables until step 4
+        #          activities and subjects in 3 seperate tables until step 4
         #----------------------------------------------------------------------
         
         # read the feature's labels
@@ -79,7 +79,7 @@ run_analysis <- function() {
         activity_labels <- as.character(activity_labels[,2])
         
         print("reading measurements, please wait, this could take some time...")
-        # read the measurements test file
+        # read the measurements test file; don't bother about naming column for now
         fname <- file.path("UCI HAR Dataset","test","X_test.txt")
         fexists(fname, "Test measurements")
         measurements <- read.table(fname)
@@ -111,9 +111,14 @@ run_analysis <- function() {
         # 2) Extracts only the measurements on the mean and standard deviation
         #    for each measurement.
         #
-        #    Note: the label names are set after extracting the mean() and std()
+        #    Note: the column names are set after extracting the mean() and std()
         #          to avoid the problem with select and duplicate column name
         #          (there are dulicates in the set of bandsEnergy variables)
+        #    Neat trick: grep on the feature_labels returns the corresponding
+        #                column positions of the measurements table! :)
+        #                We can thus use grep to select the variables of
+        #                interest from measurements and then name the columns
+        #                with the same grep command but with value set to TRUE.
         #----------------------------------------------------------------------
         library(dplyr)
         measurements <-
@@ -163,6 +168,10 @@ run_analysis <- function() {
         # 5) From the data set in step 4, creates a second, independent
         #    tidy data set with the average of each variable for each activity
         #    and each subject.
+        #
+        # To achieve this, let's group measurement by Subject_ID and then by
+        # Activity. Pass then the resulting table to summarize_each with the
+        # mean() function and making sure to exclude the two first columns.
         #----------------------------------------------------------------------
         measurement_summary <-
                 group_by(measurements, Subject_ID, Activity, add = T) %>%
