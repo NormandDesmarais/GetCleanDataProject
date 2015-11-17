@@ -8,11 +8,11 @@ This repository contains the R script and the code book for Getting and Cleaning
 + **README.md**: This file.
 + **run_analysis.R**: The R script that performs the analysis on the `Human Activity Recognition Using Smartphones`' original data set to produce a summary of the average measure per activity for each subject and for a set of selected measurement variables from the original data set (read *CodeBook.md* for more details).
 
-##run_analysis() expectations
+##run_analysis() assumptions
 The R script run_analysis makes the following assumptions:
 + the data have been obtained from [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 + the zip file has been decompressed and nothing has been modified within the decompressed files and directories
-+ the data set main directory after decompression ("UCI HAR Dataset") resiedes in the current working directory
++ the data set main directory after decompression ("UCI HAR Dataset") resides in the current working directory
 + the library `dplyr` has been installed
 
 ##run_analysis() processing 
