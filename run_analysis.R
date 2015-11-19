@@ -18,22 +18,33 @@ fexists <- function(fname, fdesc) {
 # run_analysis()
 #
 #       This function performs the analysis. It assumes that the directory
-#       "UCI HAR Dataset" is in the current directory and contains 
+#       "UCI HAR Dataset" is in the current directory and contains
 #       Samsumg's original data set without modification.
 #
 #       It is also assumes that the library dplyr has been installed.
+#       run_analysis() uses dplyr functions to select and group_by
+#       the data set.
 #
 #       run_analasys() performs the following task:
 #
-#       1) It reads the test and training data sets and merge them into one.
-#       2) It then extracts from it Standard Deviation and Mean Value
-#          measurement variables only (other variables are discarded from the
-#          analysis).
-#       3) It replaces activities ID with their human readable names
-#          (as provided by the file activity_labels.txt).
-#       4) It uses the feature's names (as provided by features.txt) as the
-#          measurements variable names, but rename them by expending 
-#          abbreviations. Namely:
+#       1) Reads the test and training data sets and row-bind them into one.
+#          (Although, for my convenience, 3 sepearate tables are maintained
+#          until step 4: subjects, activities and measurements. These tables
+#          will be column-binded into one table at the end of step 4.)
+#
+#       2) Extracts from the measurements table Standard Deviation
+#          and Mean Value measurement variables only (other variables are
+#          discarded from the analysis). The selected set of variables
+#          replace the content of the measurements table.
+#
+#       3) Change the activity ID from the activities table into their
+#          corresponding human readable activity names (as provided by 
+#          the file activity_labels.txt). 
+#
+#       4) Uses features' names (as provided by features.txt) as the
+#          measurements variable names, but rename them by expending
+#          abbreviations according to the vague law of tidyness. Namely:
+#
 #                                 leading t  --> Time
 #                                 leading f  --> Frequency
 #                                 Acc        --> Acceleration
@@ -45,20 +56,30 @@ fexists <- function(fname, fdesc) {
 #                                 -Y         --> _Yaxis
 #                                 -Z         --> _Zaxis
 #                                 BodyBody   --> Body (mistake in original)
-#       5) Finally, using this new table, it creates a summary table 
-#          containing the average of each measurement per subject and
-#          activity. Henceforth, each subject has 6 rows, one for
-#          each activity, which represent the average measured values
-#          for each measurements.
 #
-#          The measurement summary table is written in a text file
-#          with the variable names as header, and without row number.
-#          The filename is created in the "UCI HAR Dataset" directory
-#          and is called: "measurements_summary.txt".
+#          After that, the subjects (ID), activities (by names) and
+#          measurements are column-binded into the measurements table
+#          in this order.
 #
-#          The function returns the measurement summary table.
+#       5) Finally, using this new measurements table, creates a summary table
+#          containing the average of each measurement per subject and for each
+#          activity. Henceforth, each subject has 6 rows, one for each
+#          activity.
+#
+#          The measurement summary table (aka the "tidy table") is written
+#          in a text file with the variable names as header, and without
+#          row number. The file is created in the current directory and 
+#          is called: "measurements_summary.txt".
+#
+#          The function run_analysis also returns the measurement summary table
+#          after completion.
 #------------------------------------------------------------------------------
 run_analysis <- function() {
+        # run_analysis() uses dplyr to select and group measurements
+        if (!library(dplyr, logical.return = T)) {
+                stop("Couldn't load dplyr library, package is not installed!")
+        }
+        
         #----------------------------------------------------------------------
         # 1) Merges the training and the test sets to create one data set.
         #
@@ -115,32 +136,28 @@ run_analysis <- function() {
         #          to avoid the problem with select and duplicate column name
         #          (there are dulicates in the set of bandsEnergy variables)
         #    Neat trick: grep on the feature_labels returns the corresponding
-        #                column positions of the measurements table! :)
+        #                column positions of the measurements table!
         #                We can thus use grep to select the variables of
         #                interest from measurements and then name the columns
         #                with the same grep command but with value set to TRUE.
         #----------------------------------------------------------------------
-        library(dplyr)
         measurements <-
                 select(measurements, grep("(mean[(])|(std[(])",feature_labels))
         # name the measurements using the feature label
-        names(measurements) <-
+        names(measurements) <- 
                 grep("(mean[(])|(std[(])",feature_labels,value = T)
         # name the subject and activity set too
         names(subjects) <- "Subject_ID"
-        names(activities) <- "Activity_ID"
-        
+
         
         #----------------------------------------------------------------------
         # 3) Uses descriptive activity names to name the activities in the
         #    data set
         #
-        #    Note: so far we only have the Activity_ID in the activities
-        #          table. We would like to translate them into activity names
-        #          as specified by the activity's labels
+        #    Note: Translate them activity ID into activity names
+        #          as specified by the activity's labels 
         #----------------------------------------------------------------------
-        activities <- cbind(activities,
-                   activity = factor(activities[,1], label = activity_labels))
+        activities <- factor(activities[,1], label = activity_labels)
         
         
         #----------------------------------------------------------------------
@@ -161,8 +178,7 @@ run_analysis <- function() {
         names(measurements) <- mlabels
         
         # We can now bind subjects, activities and measurements into one table
-        measurements <-
-                cbind(subjects, Activity = activities$activity, measurements)
+        measurements <- cbind(subjects, Activity = activities, measurements)
         
         #----------------------------------------------------------------------
         # 5) From the data set in step 4, creates a second, independent
@@ -177,7 +193,7 @@ run_analysis <- function() {
                 group_by(measurements, Subject_ID, Activity, add = T) %>%
                 summarize_each(funs(mean),-c(1,2))
         # write the measurment summary table into a text file
-        write.table(measurement_summary, file = "measurements_summary.txt", 
+        write.table(measurement_summary, file = "measurements_summary.txt",
                     row.names = F)
         
         # return the measurement summary table
