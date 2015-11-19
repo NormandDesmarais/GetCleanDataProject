@@ -4,7 +4,7 @@ The goal of this project is to create a summary of the *standard deviation* and 
 
 The summary presented here shows, for the selected measurement variables, the average value of all measurements per activity for each subject. Hence each subject (represented by his **SubjectID**) has 6 rows, one for each **Activity**.
 
-##Srudy design and data processing
+##Study design and data processing
 ###Collection of the raw data
 The original data set (the raw data from our view point) was obtained from  [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).
 
