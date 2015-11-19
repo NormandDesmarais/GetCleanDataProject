@@ -4,15 +4,15 @@ Getting and Cleaning Data Course's Project
 ##File list
 This repository contains the R script and the code book for the **Getting and Cleaning Data** course's project.
 
-+ **CodeBook.md**: This code book describes the variables contained in the summary (tidy) data set produced by the script *run_analysis.R*. It also describe high level transformations performed in order to obtain the final summary.
-+ **README.md**: This file.
-+ **run_analysis.R**: The R script that performs the analysis on the `Human Activity Recognition Using Smartphones`' original (raw from our view point) data set to produce a summary of the average measure per activity for each subject and for a set of selected measurement variables from the original (raw) data set.
++ [CodeBook.md](https://github.com/NormandDesmarais/GetCleanDataProject/blob/master/CodeBook.md): This code book describes the variables contained in the summary (tidy) data set produced by the script *run_analysis.R*. It also describe high level transformations performed in order to obtain the final summary.
++ [README.md](https://github.com/NormandDesmarais/GetCleanDataProject/blob/master/README.md): This file.
++ [run_analysis.R](https://github.com/NormandDesmarais/GetCleanDataProject/blob/master/run_analysis.R): The R script that performs the analysis on the `Human Activity Recognition Using Smartphones`' original (raw from our view point) data set to produce a summary of the average measure per activity for each subject and for a set of selected measurement variables from the original (raw) data set.
 
 ##Assumptions
-The R script *run_analysis.R* makes the following assumptions:
-+ the data have been obtained from [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
-+ the zip file has been decompressed and nothing has been modified within the decompressed files and directories
-+ the data set main directory after decompression ("UCI HAR Dataset") resides in the current R working directory
+The R script [run_analysis.R](https://github.com/NormandDesmarais/GetCleanDataProject/blob/master/run_analysis.R) makes the following assumptions:
++ the original data set has been downloaded from [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
++ the downloaded zip file has been decompressed and nothing has been modified within the decompressed files and directories
++ the original data set main directory after decompression ("UCI HAR Dataset") resides in the current R working directory
 + the library `dplyr` has been installed from CRAN and is up to date
 
 ##Processing 

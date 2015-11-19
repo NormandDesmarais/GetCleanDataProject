@@ -25,10 +25,12 @@ The experiments have been carried out with a group of 30 volunteers within an ag
 ###Cleaning of the data
 The following operations were performed to obtain the summary leading to the tidy data file (*measurements_summary.txt*):
 
-+ 1) The test and training data sets from the original (raw) data set are merged into one data set.
-+ 2) Only the Standard Deviation (**-std()**) and Mean Value (**-mean()**) measurement variables are kept (other variables are discarded from the analysis).
-+ 3) Activities ID are replaced with their human readable names (as provided by the file *activity_labels.txt*).
-+ 4) The measurement variable's names are modified so that all abbreviations are expanded into their human readable version. (For example, the variable name **tBodyAcc-mean()-X** from the original (raw) data set is replaced by **TimeBodyAccelerationMeanValue_Xaxis** in the summary data set.)
+1. The test and training data sets from the original (raw) data set are merged into one data set.
+2. Only the Standard Deviation (**-std()**) and Mean Value (**-mean()**) measurement variables are kept (other variables are discarded from the analysis).
+3. Activities ID are replaced with their human readable names (as provided by the file *activity_labels.txt*).
+4. The measurement variable's names are modified so that all abbreviations are expanded into their human readable version. See the table below for a complete list of changes. (For example, the variable name **tBodyAcc-mean()-X** from the original (raw) data set is replaced by **TimeBodyAccelerationMeanValue_Xaxis** in the summary data set.)
+5. Finally, using this cleaned table, a summary table (the so called "tidy data set") is created. It contains, for each subject, the average value of each measurement per activity. The resultinf "tidy data set" is written into a text file named: *measurements_summary.txt*.
+
 
 Abbreviaton  | Is Replaced by
 ------------ | -----------------
@@ -42,9 +44,8 @@ Mag          | Magnitude
 -X, -Y, -Z   | _Xaxis, _Yaxis, _Zaxis
 BodyBody     | Body (removing double occurence from original varibale name)
 
-+ 5) Finally, using this cleaned table, a summary table (the so called "tidy data set") is created. It contains, for each subject, the average value of each measurement per activity. The resultinf "tidy data set" is written into a text file named: *measurements_summary.txt*.
 
-For more details on the code, please see the *README.md* file.
+For more details on the code processing, please see the [README.md](https://github.com/NormandDesmarais/GetCleanDataProject/blob/master/README.md) file.
 
 ##Description of the variables in the measurements_summary.txt file
 + Data set dimensions: 180 observables and 68 variables.
