@@ -55,8 +55,8 @@ For more details on the code processing, please see the [README.md](https://gith
 ###General comment
 + variable name starting with **Time** means that the value is time dependent.
 + variable name starting with **Frequency** means that the value is frequency dependent and was obtained after applying FFT over the corresponding Time dependent measurements.
-+ Jerk signal is the measure of change of acceleration with time, hence it is obtained as the derivative of acceleration with respect to time (units: m/s^3), or angulare acceleration with respect to time (units: radians/s^3).
-+ Magnitude stands for the length of the corresponding vector and has no unit.
++ Jerk signal is the measure of change of acceleration with time, hence it is obtained as the derivative of acceleration with respect to time, or angulare acceleration with respect to time.
++ Magnitude stands for the length of the corresponding vector.
 
 ###Subject_ID
 * **Original name**: The only variable of the files *subject_test.txt* and *subject_train.txt*.
@@ -75,204 +75,204 @@ For more details on the code processing, please see the [README.md](https://gith
 ###TimeBodyAccelerationMeanValue_Xaxis (Yaxis, Zaxis)
 * **Original name**: *tBodyAcc-mean()-X* (*Y*, *Z*)
 * **Class**: numeric (double)
-* **Units**: g (standard gravity units: 9.80665 m/s^2)
+* **Units**: none
 * **Description**: The X axis component of the mean value of the body acceleration obtained from the accelerometer measurements. The same variable exists for the Y and Z axis.
 
 ###TimeBodyAccelerationStandardDeviation_Xaxis (Yaxis, Zaxis)
 * **Original name**: *tBodyAcc-std()-X* (*Y*, *Z*)
 * **Class**: numeric (double)
-* **Units**: g (standard gravity units: 9.80665 m/s^2)
+* **Units**: none
 * **Description**: The X axis component of the standard deviation of the body acceleration obtained from the accelerometer measurements. The same variable exists for the Y and Z axis.
 
 ###TimeGravityAccelerationMeanValue_Xaxis (Yaxis, Zaxis)
 * **Original name**: *tGravityAcc-mean()-X* (*Y*, *Z*)
 * **Class**: numeric (double)
-* **Units**: g (standard gravity units: 9.80665 m/s^2)
+* **Units**: none
 * **Description**: The X axis component of the mean value of the gravity acceleration as deduced from the accelerometer measurements. The same variable exists for the Y and Z axis.
 
 ###TimeGravityAccelerationStandardDeviation_Xaxis (Yaxis, Zaxis)
 * **Original name**: *tGravityAcc-std()-X* (*Y*, *Z*)
 * **Class**: numeric (double)
-* **Units**: g (standard gravity units: 9.80665 m/s^2)
+* **Units**: none
 * **Description**: The X axis component of the standard deviation of the gravity acceleration as deduced from the accelerometer measurements. The same variable exists for the Y and Z axis.
 
 ###TimeBodyAccelerationJerkMeanValue_Xaxis (Yaxis, Zaxis)
 * **Original name**: *tBodyAccJerk-mean()-X* (*Y*, *Z*)
 * **Class**: numeric (double)
-* **Units**: m/s^3
+* **Units**: none
 * **Description**: The X axis component of the mean value of the body acceleration's Jerk signal. The same variable exists for the Y and Z axis.
 
 ###TimeBodyAccelerationJerkStandardDeviation_Xaxis (Yaxis, Zaxis)
 * **Original name**: *tBodyAccJerk-std()-X* (*Y*, *Z*)
 * **Class**: numeric (double)
-* **Units**: m/s^3
+* **Units**: none
 * **Description**: The X axis component of the standard deviation of the body acceleration's Jerk signal. The same variable exists for the Y and Z axis.
 
 ###TimeBodyGyroscopeMeanValue_Xaxis (Yaxis, Zaxis)
 * **Original name**: *tBodyGyro-mean()-X* (*Y*, *Z*)
 * **Class**: numeric (double)
-* **Units**: radians/s
+* **Units**: none
 * **Description**: The X axis component of the mean value of the body angular velocity obtained from the gyroscope measurements. The same variable exists for the Y and Z axis.
 
 ###TimeBodyGyroscopeStandardDeviation_Xaxis (Yaxis, Zaxis)
 * **Original name**: *tBodyGyro-std()-X* (*Y*, *Z*)
 * **Class**: numeric (double)
-* **Units**: radians/s
+* **Units**: none
 * **Description**: The X axis component of the standard deviation of the body angular velocity obtained from the gyroscope measurements. The same variable exists for the Y and Z axis.
 
 ###TimeBodyGyroscopeJerkMeanValue_Xaxis (Yaxis, Zaxis)
 * **Original name**: *tBodyGyroJerk-mean()-X* (*Y*, *Z*)
 * **Class**: numeric (double)
-* **Units**: radians/s^3
+* **Units**: none
 * **Description**: The X axis component of the mean value of the body angular acceleration's Jerk signal. The same variable exists for the Y and Z axis.
 
 ###TimeBodyGyroscopeJerkStandardDeviation_Xaxis (Yaxis, Zaxis)
 * **Original name**: *tBodyGyroJerk-std()-X* (*Y*, *Z*)
 * **Class**: numeric (double)
-* **Units**: radians/s^3
+* **Units**: none
 * **Description**: The X axis component of the standard deviation of the body angular acceleration's Jerk signal. The same variable exists for the Y and Z axis.
 
 ###TimeBodyAccelerationMagnitudeMeanValue
 * **Original name**: *tBodyAccMag-mean()*
 * **Class**: numeric (double)
-* **Units**: no unit
+* **Units**: none
 * **Description**: The mean value of the magnitude along the body acceleration vector.
 
 ###TimeBodyAccelerationMagnitudeStandardDeviation
 * **Original name**: *tBodyAccMag-std()*
 * **Class**: numeric (double)
-* **Units**: no unit
+* **Units**: none
 * **Description**: The standard deviation of the magnitude along the body acceleration vector.
 
 ###TimeGravityAccelerationMagnitudeMeanValue
 * **Original name**: *tGravityAccMag-mean()*
 * **Class**: numeric (double)
-* **Units**: no unit
+* **Units**: none
 * **Description**: The mean value of the magnitude along the gravity acceleration vector.
 
 ###TimeGravityAccelerationMagnitudeStandardDeviation
 * **Original name**: *tGravityAccMag-std()*
 * **Class**: numeric (double)
-* **Units**: no unit
+* **Units**: none
 * **Description**: The standard deviation of the magnitude along the gravity acceleration vector.
 
 ###TimeBodyAccelerationJerkMagnitudeMeanValue
 * **Original name**: *tBodyAccJerkMag-mean()*
 * **Class**: numeric (double)
-* **Units**: no unit
+* **Units**: none
 * **Description**: The mean value of the magnitude along the body acceleration's Jerk vector.
 
 ###TimeBodyAccelerationJerkMagnitudeStandardDeviation
 * **Original name**: *tBodyAccJerkMag-std()*
 * **Class**: numeric (double)
-* **Units**: no unit
+* **Units**: none
 * **Description**: The standard deviation of the magnitude along the body acceleration's Jerk vector.
 
 ###TimeBodyGyroscopeMagnitudeMeanValue
 * **Original name**: *tBodyGyroMag-mean()*
 * **Class**: numeric (double)
-* **Units**: no unit
+* **Units**: none
 * **Description**: The mean value of the magnitude along the body angular velocity vector.
 
 ###TimeBodyGyroscopeMagnitudeStandardDeviation
 * **Original name**: *tBodyGyroMag-std()*
 * **Class**: numeric (double)
-* **Units**: no unit
+* **Units**: none
 * **Description**: The standard deviation of the magnitude along the body angular velocity vector.
 
 ###TimeBodyGyroscopeJerkMagnitudeMeanValue
 * **Original name**: *tBodyGyroJerkMag-mean()*
 * **Class**: numeric (double)
-* **Units**: no unit
+* **Units**: none
 * **Description**: The mean value of the magnitude along the body angular acceleration's Jerk vector.
 
 ###TimeBodyGyroscopeJerkMagnitudeStandardDeviation
 * **Original name**: *tBodyGyroJerkMag-std()*
 * **Class**: numeric (double)
-* **Units**: no unit
+* **Units**: none
 * **Description**: The standard deviation of the magnitude along the body angular acceleration's Jerk vector.
 
 ###FrequencyBodyAccelerationMeanValue_Xaxis (Yaxis, Zaxis)
 * **Original name**: *fBodyAcc-mean()-X* (*Y*, *Z*)
 * **Class**: numeric (double)
-* **Units**: g (standard gravity units: 9.80665 m/s^2)
+* **Units**: none
 * **Description**: The frequency dependent value of the X axis component of the mean value of the body acceleration. The same variable exists for the Y and Z axis.
 
 ###FrequencyBodyAccelerationStandardDeviation_Xaxis (Yaxis, Zaxis)
 * **Original name**: *fBodyAcc-std()-X* (*Y*, *Z*)
 * **Class**: numeric (double)
-* **Units**: g (standard gravity units: 9.80665 m/s^2)
+* **Units**: none
 * **Description**: The frequency dependent value of the X axis component of the standard deviation of the body acceleration. The same variable exists for the Y and Z axis.
 
 ###FrequencyBodyAccelerationJerkMeanValue_Xaxis (Yaxis, Zaxis)
 * **Original name**: *fBodyAccJerk-mean()-X* (*Y*, *Z*)
 * **Class**: numeric (double)
-* **Units**: m/s^3
+* **Units**: none
 * **Description**: The frequency dependent value of the X axis component of the mean value of the body acceleration's Jerk signal. The same variable exists for the Y and Z axis.
 
 ###FrequencyBodyAccelerationJerkStandardDeviation_Xaxis (Yaxis, Zaxis)
 * **Original name**: *fBodyAccJerk-std()-X* (*Y*, *Z*)
 * **Class**: numeric (double)
-* **Units**: m/s^3
+* **Units**: none
 * **Description**: The frequency dependent value of the X axis component of the standard deviation of the body acceleration's Jerk signal. The same variable exists for the Y and Z axis.
 
 ###FrequencyBodyGyroscopeMeanValue_Xaxis (Yaxis, Zaxis)
 * **Original name**: *fBodyGyro-mean()-X* (*Y*, *Z*)
 * **Class**: numeric (double)
-* **Units**: radians/s
+* **Units**: none
 * **Description**: The frequency dependent value of the X axis component of the mean value of the body angular velocity. The same variable exists for the Y and Z axis.
 
 ###FrequencyBodyGyroscopeStandardDeviation_Xaxis (Yaxis, Zaxis)
 * **Original name**: *fBodyGyro-std()-X* (*Y*, *Z*)
 * **Class**: numeric (double)
-* **Units**: radians/s
+* **Units**: none
 * **Description**: The frequency dependent value of the X axis component of the standard deviation of the body angular velocity. The same variable exists for the Y and Z axis.
 
 ###FrequencyBodyAccelerationMagnitudeMeanValue
 * **Original name**: *fBodyAccMag-mean()*
 * **Class**: numeric (double)
-* **Units**:  no unit
+* **Units**: none
 * **Description**: The frequency dependent value of the mean value of the magnitude along the body acceleration vector.
 
 ###FrequencyBodyAccelerationMagnitudeStandardDeviation
 * **Original name**: *fBodyAccMag-std()*
 * **Class**: numeric (double)
-* **Units**:  no unit
+* **Units**: none
 * **Description**: The frequency dependent value of the standard deviation of the magnitude along the body acceleration vector.
 
 ###FrequencyBodyAccelerationJerkMagnitudeMeanValue
 * **Original name**: *fBodyBodyAccJerkMag-mean()*
 * **Class**: numeric (double)
-* **Units**:  no unit
+* **Units**: none
 * **Description**: The frequency dependent value of the mean value of the magnitude along the body acceleration's Jerk vector.
 
 ###FrequencyBodyAccelerationJerkMagnitudeStandardDeviation
 * **Original name**: *fBodyBodyAccJerkMag-std()*
 * **Class**: numeric (double)
-* **Units**:  no unit
+* **Units**: none
 * **Description**: The frequency dependent value of the standard deviation of the magnitude along the body acceleration's Jerk vector.
 
 ###FrequencyBodyGyroscopeMagnitudeMeanValue
 * **Original name**: *fBodyBodyGyroMag-mean()*
 * **Class**: numeric (double)
-* **Units**:  no unit
+* **Units**: none
 * **Description**: The frequency dependent value of the mean value of the magnitude along the body angular velocity vector.
 
 ###FrequencyBodyGyroscopeMagnitudeStandardDeviation
 * **Original name**: *fBodyBodyGyroMag-std()*
 * **Class**: numeric (double)
-* **Units**:  no unit
+* **Units**: none
 * **Description**: The frequency dependent value of the standard deviation of the magnitude along the body angular velocity vector.
 
 ###FrequencyBodyGyroscopeJerkMagnitudeMeanValue
 * **Original name**: *fBodyBodyGyroJerkMag-mean()*
 * **Class**: numeric (double)
-* **Units**:  no unit
+* **Units**: none
 * **Description**: The frequency dependent value of the mean value of the magnitude along the body angular acceleration's Jerk vector.
 
 ###FrequencyBodyGyroscopeJerkMagnitudeStandardDeviation
 * **Original name**: *fBodyBodyGyroJerkMag-std()*
 * **Class**: numeric (double)
-* **Units**:  no unit
+* **Units**: none
 * **Description**: The frequency dependent value of the standard deviation of the magnitude along the body angular acceleration's Jerk vector.
 
