@@ -51,6 +51,7 @@ For more details on the code processing, please see the [README.md](https://gith
 + Data set dimensions: 180 observables and 68 variables.
 + Summary of the data: this data set contains for each subject ID, the average value per activity of a selected set of 66 measurement variables from the original (raw) data set on Human Activity Recognition Using Smartphones.
 + Variables present in the data set: The two first variabels represent the subject ID and the activity performed. The 66 other variables are the subset of mean value and standard deviation measurement variables from the original (raw) data set. These measurement variables describe the body acceleration, the gravity acceleration, the body angular velocy as well as the derived Jerk signal and it's projected magnitude on different vectors. 
++ Variables have no unit since they have been normalized (call it an exercice in futility)!
 
 ###General comment
 + variable name starting with **Time** means that the value is time dependent.
